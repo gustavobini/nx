@@ -504,7 +504,7 @@ export function getPackageManagerCommand({
 
   return {
     npm: {
-      createWorkspace: `npx create-nx-workspace@${process.env.PUBLISHED_VERSION}`,
+      createWorkspace: `npx create-nx-workspace@9999.0.2`,
       runNx: `npm run nx${scriptsPrependNodePathFlag} --`,
       runNxSilent: `npm run nx --silent${scriptsPrependNodePathFlag} --`,
       addDev: `npm install --legacy-peer-deps -D`,
@@ -512,14 +512,14 @@ export function getPackageManagerCommand({
     },
     yarn: {
       // `yarn create nx-workspace` is failing due to wrong global path
-      createWorkspace: `yarn global add create-nx-workspace@${process.env.PUBLISHED_VERSION} && create-nx-workspace`,
+      createWorkspace: `yarn global add create-nx-workspace@9999.0.2 && create-nx-workspace`,
       runNx: `yarn nx`,
       runNxSilent: `yarn --silent nx`,
       addDev: `yarn add -D`,
       list: 'npm ls --depth 10',
     },
     pnpm: {
-      createWorkspace: `pnpx create-nx-workspace@${process.env.PUBLISHED_VERSION}`,
+      createWorkspace: `pnpx create-nx-workspace@9999.0.2`,
       runNx: `pnpm run nx --`,
       runNxSilent: `pnpm run nx --silent --`,
       addDev: `pnpm add -D`,

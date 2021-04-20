@@ -1,7 +1,6 @@
 {
   "npmScope": "nrwl",
   "implicitDependencies": {
-    "tslint.json": "*",
     ".eslintrc.json": "*"
   },
   "tasksRunnerOptions": {
@@ -19,6 +18,20 @@
         "cacheDirectory": "/tmp/nx-cache"
       }
     }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build-base",
+        "projects": "self"
+      }
+    ],
+    "build-base": [
+      {
+        "target": "build-base",
+        "projects": "dependencies"
+      }
+    ]
   },
   "workspaceLayout": {
     "libsDir": "",
@@ -168,12 +181,16 @@
     "dep-graph-dep-graph": {
       "tags": ["core"]
     },
-    "nx-dev": { "tags": ["scope:nx-dev", "type:app"] },
+    "nx-dev": {
+      "tags": ["scope:nx-dev", "type:app"]
+    },
     "nx-dev-e2e": {
       "tags": ["scope:nx-dev", "type:e2e"],
       "implicitDependencies": ["nx-dev"]
     },
-    "nx-dev-ui-common": { "tags": ["scope:nx-dev", "type:ui"] },
+    "nx-dev-ui-common": {
+      "tags": ["scope:nx-dev", "type:ui"]
+    },
     "nx-dev-feature-doc-viewer": {
       "tags": ["scope:nx-dev", "type:feature"]
     },

@@ -385,7 +385,7 @@ ${readFile(mainPath)}
     );
 
     expect(() => runCLI(`build ${appName}`)).toThrowError(
-      `Type error: Type 'number' is not assignable to type 'string'.`
+      `Type 'number' is not assignable to type 'string'.`
     );
   }, 120000);
 

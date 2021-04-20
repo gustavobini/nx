@@ -1,3 +1,5 @@
+process.env.SELECTED_CLI = 'angular';
+
 import * as path from 'path';
 import {
   checkFilesExist,
@@ -12,6 +14,7 @@ import {
   uniq,
   updateFile,
 } from '@nrwl/e2e/utils';
+
 import { names } from '@nrwl/devkit';
 
 describe('Angular Package', () => {

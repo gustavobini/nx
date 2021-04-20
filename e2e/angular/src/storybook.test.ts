@@ -1,3 +1,5 @@
+process.env.SELECTED_CLI = 'angular';
+
 import {
   checkFilesExist,
   newProject,
@@ -17,7 +19,7 @@ describe('Storybook schematics', () => {
 
   afterEach(() => removeProject({ onlyOnCI: true }));
 
-  it('aaashould not overwrite global storybook config files', () => {
+  it('should not overwrite global storybook config files', () => {
     const angularStorybookLib = uniq('test-ui-lib-angular');
     runCLI(
       `generate @nrwl/angular:lib ${angularStorybookLib} --no-interactive`

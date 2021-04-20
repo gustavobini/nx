@@ -150,7 +150,7 @@ describe('create-nx-workspace', () => {
 
     mkdirSync(tmpDir);
 
-    const command = `npx create-nx-workspace@${process.env.PUBLISHED_VERSION} ${wsName} --cli=nx --preset=empty --no-nxCloud --no-interactive`;
+    const command = `npx create-nx-workspace@${'9999.0.2'} ${wsName} --cli=nx --preset=empty --no-nxCloud --no-interactive`;
     execSync(command, {
       cwd: tmpDir,
       stdio: [0, 1, 2],
